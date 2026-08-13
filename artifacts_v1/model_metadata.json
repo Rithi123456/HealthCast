@@ -1,0 +1,751 @@
+{
+  "features": [
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_7",
+    "lag_14",
+    "rolling_avg_7",
+    "rolling_avg_14",
+    "rolling_std_7",
+    "growth_rate"
+  ],
+  "forecast_type": "direct_multi_output_7_day",
+  "forecast_days": 7,
+  "feature_target_design": {
+    "features": "training-derived capped case-count history",
+    "targets": "original uncapped future case counts",
+    "evaluation": "original uncapped observed case counts"
+  },
+  "growth_clip": 0.3,
+  "outlier_quantile": 0.99,
+  "sanity_bound_pct": 0.25,
+  "states_modeled": [
+    "TN",
+    "KA",
+    "MH",
+    "DL",
+    "KL"
+  ],
+  "state_outlier_caps": {
+    "TN": 34826.26,
+    "KA": 47357.76000000002,
+    "MH": 66802.54000000001,
+    "DL": 25178.330000000005,
+    "KL": 38596.71
+  },
+  "state_test_metrics": {
+    "TN": {
+      "mae": 10497.213732748407,
+      "rmse": 14881.879415534577,
+      "naive_mae": 2265.5548872180448,
+      "naive_rmse": 2865.9254627403047,
+      "target_mean": 15207.19097744361,
+      "beats_naive": false,
+      "mae_by_horizon": [
+        10580.616432386361,
+        10562.10787922269,
+        10553.399647287739,
+        10531.536908032389,
+        10498.846006354908,
+        10433.553064350272,
+        10320.436191604485
+      ],
+      "rmse_by_horizon": [
+        14990.187486979186,
+        14952.253397420129,
+        14925.689077828509,
+        14900.83808522368,
+        14876.135766798498,
+        14822.670137494708,
+        14705.38195699731
+      ],
+      "naive_mae_by_horizon": [
+        599.6631578947369,
+        1174.6526315789474,
+        1739.2736842105264,
+        2289.8842105263157,
+        2831.3263157894735,
+        3359.0526315789475,
+        3865.0315789473684
+      ],
+      "naive_rmse_by_horizon": [
+        816.5814362972399,
+        1524.5375278044849,
+        2210.492426682583,
+        2886.593051004118,
+        3555.1131420296006,
+        4209.246745965488,
+        4858.913909398619
+      ],
+      "selected_config": {
+        "n_estimators": 400,
+        "max_depth": 12,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2
+      },
+      "validation_results": [
+        {
+          "config": {
+            "n_estimators": 300,
+            "max_depth": 8,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 890.7187504621625,
+          "rmse": 1534.0313271126054
+        },
+        {
+          "config": {
+            "n_estimators": 400,
+            "max_depth": 12,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 885.3187022155561,
+          "rmse": 1529.938485504512
+        },
+        {
+          "config": {
+            "n_estimators": 500,
+            "max_depth": null,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 886.5671431353821,
+          "rmse": 1532.4527009571689
+        }
+      ],
+      "test_start_index": 406,
+      "test_end_index": 501
+    },
+    "KA": {
+      "mae": 11284.369522259207,
+      "rmse": 17323.96874215687,
+      "naive_mae": 3088.4736842105262,
+      "naive_rmse": 4593.877783206696,
+      "target_mean": 15763.633082706767,
+      "beats_naive": false,
+      "mae_by_horizon": [
+        10811.24257833677,
+        10944.941638475604,
+        11142.743838921124,
+        11400.656103768602,
+        11449.83488742195,
+        11697.183146607187,
+        11543.984462283208
+      ],
+      "rmse_by_horizon": [
+        17111.920296383967,
+        17203.251838284286,
+        17378.08376313556,
+        17506.73767650285,
+        17390.474968545983,
+        17490.32312373086,
+        17186.989528514598
+      ],
+      "naive_mae_by_horizon": [
+        2013.4842105263158,
+        2233.821052631579,
+        2556.073684210526,
+        3141.1157894736843,
+        3442.6315789473683,
+        3913.1684210526314,
+        4319.021052631579
+      ],
+      "naive_rmse_by_horizon": [
+        3262.1069636210987,
+        3385.0115804824068,
+        3971.5372272419177,
+        4808.603500087383,
+        4965.785630322335,
+        5727.2013731333955,
+        6036.898207558336
+      ],
+      "selected_config": {
+        "n_estimators": 300,
+        "max_depth": 8,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2
+      },
+      "validation_results": [
+        {
+          "config": {
+            "n_estimators": 300,
+            "max_depth": 8,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 2130.9306463765297,
+          "rmse": 3777.7893926036018
+        },
+        {
+          "config": {
+            "n_estimators": 400,
+            "max_depth": 12,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 2138.1545459716485,
+          "rmse": 3789.5462857241337
+        },
+        {
+          "config": {
+            "n_estimators": 500,
+            "max_depth": null,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 2138.4077193912685,
+          "rmse": 3786.61084655395
+        }
+      ],
+      "test_start_index": 406,
+      "test_end_index": 501
+    },
+    "MH": {
+      "mae": 6741.327720118928,
+      "rmse": 11350.764650019652,
+      "naive_mae": 3508.272180451128,
+      "naive_rmse": 5470.193410862127,
+      "target_mean": 19889.88270676692,
+      "beats_naive": false,
+      "mae_by_horizon": [
+        4621.905930275354,
+        5245.1707442619545,
+        5884.660113868518,
+        6664.078907785127,
+        7416.492647595679,
+        8200.139635676305,
+        9156.846061369553
+      ],
+      "rmse_by_horizon": [
+        7876.415111571034,
+        9069.481579098485,
+        10184.600376230113,
+        11355.693772279426,
+        12401.45362010162,
+        13653.915362922075,
+        14913.792727934808
+      ],
+      "naive_mae_by_horizon": [
+        2374.8526315789472,
+        3104.1473684210528,
+        3173.5789473684213,
+        3580.242105263158,
+        3898.557894736842,
+        4101.4,
+        4325.126315789474
+      ],
+      "naive_rmse_by_horizon": [
+        3927.5963172885968,
+        4838.44614030492,
+        5183.570102788841,
+        5605.3225391962105,
+        6077.39115687679,
+        6215.902213381079,
+        6443.125406198455
+      ],
+      "selected_config": {
+        "n_estimators": 400,
+        "max_depth": 12,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2
+      },
+      "validation_results": [
+        {
+          "config": {
+            "n_estimators": 300,
+            "max_depth": 8,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 22363.275327913598,
+          "rmse": 27790.730548642434
+        },
+        {
+          "config": {
+            "n_estimators": 400,
+            "max_depth": 12,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 22316.403853137635,
+          "rmse": 27739.048522075194
+        },
+        {
+          "config": {
+            "n_estimators": 500,
+            "max_depth": null,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 22330.672177368,
+          "rmse": 27756.21267655012
+        }
+      ],
+      "test_start_index": 406,
+      "test_end_index": 501
+    },
+    "DL": {
+      "mae": 2494.22005687432,
+      "rmse": 5088.115076291383,
+      "naive_mae": 1207.2511278195489,
+      "naive_rmse": 2395.3959911091274,
+      "target_mean": 3807.1624060150375,
+      "beats_naive": false,
+      "mae_by_horizon": [
+        1840.8806332829743,
+        1939.546299483731,
+        2231.9653066947667,
+        2552.4644576003525,
+        2758.9180400437567,
+        2993.5788230845765,
+        3142.1868379300845
+      ],
+      "rmse_by_horizon": [
+        3665.1926588409615,
+        3836.739312744251,
+        4391.052501262517,
+        5137.996983944741,
+        5697.5818681265955,
+        6269.477361469009,
+        6618.76484765161
+      ],
+      "naive_mae_by_horizon": [
+        554.0842105263158,
+        789.5368421052632,
+        977.9578947368421,
+        1251.1263157894737,
+        1445.6421052631579,
+        1621.621052631579,
+        1810.7894736842106
+      ],
+      "naive_rmse_by_horizon": [
+        1148.433945125182,
+        1746.7923866634133,
+        2065.8676831323264,
+        2452.437758210132,
+        2797.099339635522,
+        3094.1141339136493,
+        3463.0266910836676
+      ],
+      "selected_config": {
+        "n_estimators": 500,
+        "max_depth": null,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2
+      },
+      "validation_results": [
+        {
+          "config": {
+            "n_estimators": 300,
+            "max_depth": 8,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 3499.7870560542474,
+          "rmse": 6828.248405514939
+        },
+        {
+          "config": {
+            "n_estimators": 400,
+            "max_depth": 12,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 3501.4617705126207,
+          "rmse": 6829.847354144998
+        },
+        {
+          "config": {
+            "n_estimators": 500,
+            "max_depth": null,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 3499.1366664091497,
+          "rmse": 6823.603611645024
+        }
+      ],
+      "test_start_index": 406,
+      "test_end_index": 501
+    },
+    "KL": {
+      "mae": 12471.66733990984,
+      "rmse": 15953.153700835159,
+      "naive_mae": 3986.206015037594,
+      "naive_rmse": 5334.718739104925,
+      "target_mean": 20229.133834586468,
+      "beats_naive": false,
+      "mae_by_horizon": [
+        12839.333120437454,
+        12979.51925304834,
+        13386.270888909776,
+        12658.8655239956,
+        12158.027858687432,
+        11838.23559217456,
+        11441.419142115717
+      ],
+      "rmse_by_horizon": [
+        16447.362530962564,
+        16602.3200176297,
+        16773.031314254662,
+        16074.519998411733,
+        15668.355923115349,
+        15271.60085665837,
+        14834.885264813727
+      ],
+      "naive_mae_by_horizon": [
+        3314.4736842105262,
+        4131.284210526316,
+        4234.063157894737,
+        4187.526315789473,
+        4571.0526315789475,
+        4287.105263157895,
+        3177.936842105263
+      ],
+      "naive_rmse_by_horizon": [
+        4442.762799738114,
+        5626.45589112159,
+        5623.0993046071735,
+        5756.651858593902,
+        6195.254703569924,
+        5565.032360051561,
+        4133.77425605221
+      ],
+      "selected_config": {
+        "n_estimators": 400,
+        "max_depth": 12,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2
+      },
+      "validation_results": [
+        {
+          "config": {
+            "n_estimators": 300,
+            "max_depth": 8,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 2004.8859494660194,
+          "rmse": 3411.9689656390988
+        },
+        {
+          "config": {
+            "n_estimators": 400,
+            "max_depth": 12,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 1985.7210257754512,
+          "rmse": 3391.983945834455
+        },
+        {
+          "config": {
+            "n_estimators": 500,
+            "max_depth": null,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+          },
+          "mae": 1996.715738134412,
+          "rmse": 3400.648561384158
+        }
+      ],
+      "test_start_index": 406,
+      "test_end_index": 501
+    }
+  },
+  "state_backtest_metrics": {
+    "TN": {
+      "backtest_mae": 302.45975033498274,
+      "naive_mae": 150.85714285714286,
+      "beats_naive": false,
+      "mae_by_horizon": [
+        74.25375324675406,
+        203.00914078282858,
+        314.50623376623344,
+        377.6778797799434,
+        402.92874837662384,
+        389.3025716089469,
+        355.5399247835487
+      ],
+      "naive_mae_by_horizon": [
+        11.0,
+        92.0,
+        180.0,
+        219.0,
+        223.0,
+        190.0,
+        141.0
+      ]
+    },
+    "KA": {
+      "backtest_mae": 244.92543810169155,
+      "naive_mae": 317.0,
+      "beats_naive": true,
+      "mae_by_horizon": [
+        81.52892991054591,
+        376.6446431375359,
+        223.6700802646899,
+        341.11679670499916,
+        274.0514056186016,
+        309.03221491284717,
+        108.43399616262127
+      ],
+      "naive_mae_by_horizon": [
+        30.0,
+        551.0,
+        389.0,
+        486.0,
+        374.0,
+        216.0,
+        173.0
+      ]
+    },
+    "MH": {
+      "backtest_mae": 477.34965241702747,
+      "naive_mae": 641.2857142857143,
+      "beats_naive": true,
+      "mae_by_horizon": [
+        271.9009661796481,
+        743.8928643578702,
+        162.24289556277108,
+        498.97132269119265,
+        93.46334487734384,
+        1217.1185836038994,
+        353.8575896464672
+      ],
+      "naive_mae_by_horizon": [
+        599.0,
+        984.0,
+        342.0,
+        701.0,
+        221.0,
+        1389.0,
+        253.0
+      ]
+    },
+    "DL": {
+      "backtest_mae": 12.757328241599662,
+      "naive_mae": 18.571428571428573,
+      "beats_naive": true,
+      "mae_by_horizon": [
+        11.93327388167387,
+        18.31750988455984,
+        0.7204723665223796,
+        2.3792437950937497,
+        32.68819292929292,
+        4.997809018758993,
+        18.26479581529587
+      ],
+      "naive_mae_by_horizon": [
+        10.0,
+        26.0,
+        14.0,
+        19.0,
+        8.0,
+        26.0,
+        27.0
+      ]
+    },
+    "KL": {
+      "backtest_mae": 2039.9221511861053,
+      "naive_mae": 2013.2857142857142,
+      "beats_naive": false,
+      "mae_by_horizon": [
+        1946.2345218253868,
+        1759.8912081807139,
+        754.1654394078068,
+        1373.3959843558987,
+        608.3263663766702,
+        6610.27954296397,
+        1227.1619951922912
+      ],
+      "naive_mae_by_horizon": [
+        73.0,
+        65.0,
+        1357.0,
+        1505.0,
+        1401.0,
+        8145.0,
+        1547.0
+      ]
+    }
+  },
+  "rolling_7day_validation": {
+    "TN": [
+      {
+        "window": 4,
+        "model_mae": 632.621601334604,
+        "naive_mae": 470.42857142857144,
+        "beats_naive": false
+      },
+      {
+        "window": 3,
+        "model_mae": 430.48194274376414,
+        "naive_mae": 555.8571428571429,
+        "beats_naive": true
+      },
+      {
+        "window": 2,
+        "model_mae": 639.251216226895,
+        "naive_mae": 314.42857142857144,
+        "beats_naive": false
+      },
+      {
+        "window": 1,
+        "model_mae": 150.20375163196599,
+        "naive_mae": 79.42857142857143,
+        "beats_naive": false
+      }
+    ],
+    "KA": [
+      {
+        "window": 4,
+        "model_mae": 427.83352781213523,
+        "naive_mae": 529.5714285714286,
+        "beats_naive": true
+      },
+      {
+        "window": 3,
+        "model_mae": 341.8243990414342,
+        "naive_mae": 960.8571428571429,
+        "beats_naive": true
+      },
+      {
+        "window": 2,
+        "model_mae": 173.40656691192387,
+        "naive_mae": 224.0,
+        "beats_naive": true
+      },
+      {
+        "window": 1,
+        "model_mae": 178.87518661100802,
+        "naive_mae": 234.28571428571428,
+        "beats_naive": true
+      }
+    ],
+    "MH": [
+      {
+        "window": 4,
+        "model_mae": 823.0986742252444,
+        "naive_mae": 1113.857142857143,
+        "beats_naive": true
+      },
+      {
+        "window": 3,
+        "model_mae": 972.8573787611422,
+        "naive_mae": 658.2857142857143,
+        "beats_naive": false
+      },
+      {
+        "window": 2,
+        "model_mae": 749.6756983369305,
+        "naive_mae": 1243.142857142857,
+        "beats_naive": true
+      },
+      {
+        "window": 1,
+        "model_mae": 2549.3122642823114,
+        "naive_mae": 2751.714285714286,
+        "beats_naive": true
+      }
+    ],
+    "DL": [
+      {
+        "window": 4,
+        "model_mae": 185.7105533904371,
+        "naive_mae": 16.285714285714285,
+        "beats_naive": false
+      },
+      {
+        "window": 3,
+        "model_mae": 84.95223222069248,
+        "naive_mae": 13.714285714285714,
+        "beats_naive": false
+      },
+      {
+        "window": 2,
+        "model_mae": 52.31965287139521,
+        "naive_mae": 18.428571428571427,
+        "beats_naive": false
+      },
+      {
+        "window": 1,
+        "model_mae": 16.267928730971796,
+        "naive_mae": 17.0,
+        "beats_naive": true
+      }
+    ],
+    "KL": [
+      {
+        "window": 4,
+        "model_mae": 1461.743656651551,
+        "naive_mae": 1589.142857142857,
+        "beats_naive": true
+      },
+      {
+        "window": 3,
+        "model_mae": 2264.7745554181265,
+        "naive_mae": 1687.857142857143,
+        "beats_naive": false
+      },
+      {
+        "window": 2,
+        "model_mae": 2570.715129440666,
+        "naive_mae": 1680.2857142857142,
+        "beats_naive": false
+      },
+      {
+        "window": 1,
+        "model_mae": 4279.996620937264,
+        "naive_mae": 2596.714285714286,
+        "beats_naive": false
+      }
+    ]
+  },
+  "rolling_7day_summary": {
+    "TN": {
+      "windows_tested": 4,
+      "windows_won": 1,
+      "win_rate": 0.25,
+      "rolling_pass": false
+    },
+    "KA": {
+      "windows_tested": 4,
+      "windows_won": 4,
+      "win_rate": 1.0,
+      "rolling_pass": true
+    },
+    "MH": {
+      "windows_tested": 4,
+      "windows_won": 3,
+      "win_rate": 0.75,
+      "rolling_pass": true
+    },
+    "DL": {
+      "windows_tested": 4,
+      "windows_won": 1,
+      "win_rate": 0.25,
+      "rolling_pass": false
+    },
+    "KL": {
+      "windows_tested": 4,
+      "windows_won": 1,
+      "win_rate": 0.25,
+      "rolling_pass": false
+    }
+  },
+  "forecast_gate": {
+    "enabled": true,
+    "criteria": [
+      "broader held-out state test-set MAE must beat persistence",
+      "at least 3 of 4 rolling 7-day validation windows must beat persistence"
+    ],
+    "min_rolling_wins": 3,
+    "rolling_windows": 4,
+    "failed_forecast_behavior": "withhold forecast number",
+    "source_of_truth": "combined state_test_metrics and rolling_7day_summary"
+  }
+}

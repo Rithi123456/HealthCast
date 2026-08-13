@@ -1,0 +1,82 @@
+{
+  "version": "HealthCast_V2",
+  "forecast_horizon": 7,
+  "feature_columns": [
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_7",
+    "lag_14",
+    "rolling_avg_7",
+    "rolling_avg_14",
+    "rolling_std_7",
+    "growth_rate",
+    "level_ratio_7",
+    "level_ratio_14",
+    "trend_slope_7",
+    "trend_slope_14"
+  ],
+  "data_source": "f:\\HealthCast-main\\state_data.csv",
+  "gate_rule": {
+    "final_test_beats_strongest_baseline": true,
+    "rolling_windows_required": 3,
+    "rolling_windows_tested": 4
+  },
+  "states": {
+    "TN": {
+      "selected_model": "hist_gradient_boosting",
+      "model_mae": 9445.693522102265,
+      "persistence_mae": 2289.447521865889,
+      "seasonal_naive_mae": 4048.709912536443,
+      "beats_strongest_baseline": false,
+      "rolling_pass": true,
+      "production_gate": false,
+      "rolling_windows_won": 3,
+      "rolling_windows_tested": 4
+    },
+    "KA": {
+      "selected_model": "random_forest",
+      "model_mae": 7259.864727333719,
+      "persistence_mae": 3224.9008746355685,
+      "seasonal_naive_mae": 5031.026239067055,
+      "beats_strongest_baseline": false,
+      "rolling_pass": true,
+      "production_gate": false,
+      "rolling_windows_won": 3,
+      "rolling_windows_tested": 4
+    },
+    "MH": {
+      "selected_model": null,
+      "model_mae": NaN,
+      "persistence_mae": 3516.160349854227,
+      "seasonal_naive_mae": 4418.889212827989,
+      "beats_strongest_baseline": false,
+      "rolling_pass": false,
+      "production_gate": false,
+      "rolling_windows_won": 0,
+      "rolling_windows_tested": 0
+    },
+    "DL": {
+      "selected_model": null,
+      "model_mae": NaN,
+      "persistence_mae": 1225.6909620991253,
+      "seasonal_naive_mae": 1922.478134110787,
+      "beats_strongest_baseline": false,
+      "rolling_pass": false,
+      "production_gate": false,
+      "rolling_windows_won": 0,
+      "rolling_windows_tested": 0
+    },
+    "KL": {
+      "selected_model": null,
+      "model_mae": NaN,
+      "persistence_mae": 4010.0338733431518,
+      "seasonal_naive_mae": 3606.8674521354933,
+      "beats_strongest_baseline": false,
+      "rolling_pass": false,
+      "production_gate": false,
+      "rolling_windows_won": 0,
+      "rolling_windows_tested": 0
+    }
+  }
+}
